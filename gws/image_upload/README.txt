@@ -6,3 +6,8 @@ client folder but will reference the file in server folder)
 
 The key thing to note at runtime is the value of image that is passed into the
 Web Service function is the value where the uploaded file is located.
+
+So note how in this instance the web service function copies the file to 
+"last.png" and then the client program references that to display it.
+
+TODO: Wonder if should include filename/extension in the upload as well?  

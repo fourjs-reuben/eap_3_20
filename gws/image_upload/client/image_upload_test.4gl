@@ -4,6 +4,7 @@ MAIN
 DEFINE wsstatus INTEGER
 DEFINE filename STRING
 
+    CLOSE WINDOW SCREEN
     OPEN WINDOW w WITH FORM "image_upload_test"
     
     MENU ""
