@@ -146,6 +146,9 @@
       </Group>
     </Group>
     <Group environment="value:FGLAPPSERVER=8090" label="05_crud" targetDirectory="$(ProjectDir)/gws/crud">
+      <Library binaryName="_readme" id="-1895439089" label="_readme">
+        <File filePath="gws/crud/README.txt"/>
+      </Library>
       <Group label="client" targetDirectory="$(ProjectDir)/gws/crud/client">
         <Application binaryName="crud_test" id="-1829518384" label="crud_test">
           <File excludeFromLink="true" filePath="gws/crud/client/crud.4gl"/>
@@ -158,19 +161,6 @@
           <File filePath="gws/crud/server/crud_main.4gl"/>
         </Application>
       </Group>
-    </Group>
-    <Group label="99_calculator_client" targetDirectory="$(ProjectDir)/gws/calculator_client">
-      <Application binaryName="01_calculator_client" environment="value:FGLWSDEBUG=3" id="1253625617" label="01_calculator_client">
-        <File excludeFromLink="true" filePath="gws/calculator_client/calculator.4gl"/>
-        <File filePath="gws/calculator_client/calculator_client.4gl"/>
-        <File filePath="gws/calculator_client/calculator_client.per"/>
-      </Application>
-    </Group>
-    <Group label="99_calculator_server" targetDirectory="$(ProjectDir)/gws/calculator_server">
-      <Application binaryName="01_calculator_wsparam" environment="value:FGLAPPSERVER=8101" id="1735934512" label="01_calculator_wsparam" targetDirectory="$(ProjectDir)/gws/calculator_server/calculator_wsparam">
-        <File excludeFromLink="true" filePath="gws/calculator_server/calculator_wsparam/calculator.4gl"/>
-        <File filePath="gws/calculator_server/calculator_wsparam/calculator_main.4gl"/>
-      </Application>
     </Group>
   </Group>
 </Project>

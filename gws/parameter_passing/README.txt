@@ -1,6 +1,6 @@
 Command used to generate calculator.4gl in calculator_client.4gl
 
-fglrestful -o calculator.4gl http://localhost:8101/ws/r/Calculator?openapi.json
+fglrestful -o calculator.4gl http://localhost:8090/ws/r/Calculator?openapi.json
 
 The key thing with this example is that when calculator_client.4gl runs, it runs
 with FGLWSDEBUG = 3.  It passes the same information in 4 different formats to
