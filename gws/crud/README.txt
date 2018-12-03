@@ -19,6 +19,7 @@ table.
 
 When running the client program, it is very rudimentary.  List will list all 
 rows, and create will insert a row, so normal first two steps are create, list,
-and then whatever
+and then whatever actions you want after that, using get or list to verify 
+the create/update or delete
 
 

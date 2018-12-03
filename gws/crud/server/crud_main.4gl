@@ -6,7 +6,7 @@ DEFINE result INTEGER
 
     CALL crud.init()
 
-    CALL com.WebServiceEngine.RegisterRestService("crud","CRUD",NULL,NULL)
+    CALL com.WebServiceEngine.RegisterRestService("crud","CRUD")
     CALL com.WebServiceEngine.Start()
     
     WHILE TRUE
