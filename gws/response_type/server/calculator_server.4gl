@@ -20,14 +20,14 @@ END FUNCTION
 
 
 -- Control the response via accept header
--- curl --header 'Accept: application/json' http://localhost:090/Calculator/Add?a=b&b=2
+-- curl --header 'Accept: application/json' http://localhost:8090/Calculator/Add?a=b&b=2
 -- Can't use query parameter e.g. ?format=json, ?format=xml https://swagger.io/docs/specification/describing-parameters/
 FUNCTION add(
     a INTEGER ATTRIBUTES(WSQuery),
     b INTEGER ATTRIBUTES(WSQuery)
     )
     ATTRIBUTES (WSGet, WSPath="/Add")
-    RETURNS addType ATTRIBUTES(WSName="add", WSMedia="application/xml,application/json")
+    RETURNS addType ATTRIBUTES(WSName="add", WSMedia="application/json,application/xml")
 
 DEFINE add addType 
 
