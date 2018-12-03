@@ -142,6 +142,8 @@
         <Application binaryName="image_download" id="898477739" label="image_download">
           <File excludeFromLink="true" filePath="gws/image_download/server/image_download.4gl"/>
           <File filePath="gws/image_download/server/image_download_main.4gl"/>
+          <File filePath="gws/image_download/server/smiley.png"/>
+          <File filePath="gws/image_download/server/ssmiley.png"/>
         </Application>
       </Group>
     </Group>
