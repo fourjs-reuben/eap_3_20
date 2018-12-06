@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="2139326872" gstVersion="30a0a" version="3.2">
+<Project defaultApplication="1193987704" gstVersion="30a0a" version="3.2">
   <Settings>
     <DynamicProperties version="2">
       <DynamicProperty description="Accent color (Android 5.0 and later)" initialValue="#9575CD" isDefaultInherited="false" isHidden="false" label="Accent color" name="gma-accent-color" readOnly="false" type="COLOR"/>
@@ -164,5 +164,35 @@
         </Application>
       </Group>
     </Group>
+    <Group label="06_multiple" targetDirectory="$(ProjectDir)/gws/multiple">
+      <Library binaryName="_readme" id="1476290113" label="_readme">
+        <File filePath="gws/multiple/README.txt"/>
+      </Library>
+      <Group environment="value:FGLAPPSERVER=8090" label="server" targetDirectory="$(ProjectDir)/gws/multiple/server">
+        <Application binaryName="multiple" id="1193987704" label="multiple">
+          <File filePath="gws/multiple/server/multiple_main.4gl"/>
+          <File excludeFromLink="true" filePath="gws/multiple/server/table1.4gl"/>
+          <File excludeFromLink="true" filePath="gws/multiple/server/table2.4gl"/>
+        </Application>
+      </Group>
+    </Group>
+  </Group>
+  <Group label="universal" language="Genero" targetDirectory="$(ProjectDir)/universal">
+    <Application binaryName="application_window_title" id="221372458" label="application_window_title">
+      <File filePath="universal/application_window_title.4gl"/>
+      <File filePath="universal/application_window_title_main.per"/>
+      <File filePath="universal/application_window_title_modal.per"/>
+    </Application>
+    <Application binaryName="error_message" id="-47606290" label="error_message">
+      <File filePath="universal/error_message.4gl"/>
+      <File filePath="universal/error_message.4st"/>
+      <File filePath="universal/error_message.per"/>
+      <File filePath="universal/error_message_modal.per"/>
+    </Application>
+    <Application binaryName="home" id="1984330704" label="home">
+      <File filePath="fgl/home.4gl"/>
+      <File filePath="universal/home.4st"/>
+      <File filePath="fgl/home.per"/>
+    </Application>
   </Group>
 </Project>

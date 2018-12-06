@@ -1,0 +1,9 @@
+FUNCTION name(
+    )
+    ATTRIBUTES (WSGet, WSPath='/name')
+    RETURNS STRING
+
+DEFINE s STRING
+
+    RETURN "Table 2"
+END FUNCTION
