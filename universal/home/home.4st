@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ANSI_X3.4-1968"?>
+<StyleList>
+  <Style name="Window">
+     <StyleAttribute name="windowType" value="normal" />
+  </Style>
+
+  <Style name="Window.home">
+     <StyleAttribute name="windowType" value="normal" />
+     <StyleAttribute name="border" value="none" />
+     <StyleAttribute name="windowState" value="maximized" />
+     <StyleAttribute name="actionPanelPosition" value="bottom" />
+     <StyleAttribute name="ringMenuPosition" value="none" />
+     <StyleAttribute name="toolBarPosition" value="bottom" />
+     <StyleAttribute name="statusBarType" value="none" />
+  </Style>
+   <Style name="Image.home">
+     <StyleAttribute name="border" value="none" />
+     <StyleAttribute name="alignment" value="horizontalCenter verticalCenter" />
+   </Style>
+   <Style name="ToolBarSeparator">
+    <StyleAttribute name="iosSeparatorStretch" value="yes" />
+    </Style>
+
+</StyleList>

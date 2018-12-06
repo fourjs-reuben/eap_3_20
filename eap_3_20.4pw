@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="1193987704" gstVersion="30a0a" version="3.2">
+<Project defaultApplication="-47606290" gstVersion="30a0a" version="3.2">
   <Settings>
     <DynamicProperties version="2">
       <DynamicProperty description="Accent color (Android 5.0 and later)" initialValue="#9575CD" isDefaultInherited="false" isHidden="false" label="Accent color" name="gma-accent-color" readOnly="false" type="COLOR"/>
@@ -178,21 +178,31 @@
     </Group>
   </Group>
   <Group label="universal" language="Genero" targetDirectory="$(ProjectDir)/universal">
-    <Application binaryName="application_window_title" id="221372458" label="application_window_title">
-      <File filePath="universal/application_window_title.4gl"/>
-      <File filePath="universal/application_window_title_main.per"/>
-      <File filePath="universal/application_window_title_modal.per"/>
+    <Application binaryName="application_window_title" id="221372458" label="application_window_title" targetDirectory="$(ProjectDir)/universal/application_window_title">
+      <File filePath="universal/application_window_title/application_window_title.4gl"/>
+      <File filePath="universal/application_window_title/application_window_title_main.per"/>
+      <File filePath="universal/application_window_title/application_window_title_modal.per"/>
+      <File filePath="universal/application_window_title/README.txt"/>
     </Application>
-    <Application binaryName="error_message" id="-47606290" label="error_message">
-      <File filePath="universal/error_message.4gl"/>
-      <File filePath="universal/error_message.4st"/>
-      <File filePath="universal/error_message.per"/>
-      <File filePath="universal/error_message_modal.per"/>
+    <Application binaryName="error_message" id="-47606290" label="error_message" targetDirectory="$(ProjectDir)/universal/error_message">
+      <File filePath="universal/error_message/error_message.4gl"/>
+      <File filePath="universal/error_message/error_message.4st"/>
+      <File filePath="universal/error_message/error_message.per"/>
+      <File filePath="universal/error_message/error_message_modal.per"/>
+      <File filePath="universal/error_message/README.txt"/>
     </Application>
-    <Application binaryName="home" id="1984330704" label="home">
-      <File filePath="fgl/home.4gl"/>
-      <File filePath="universal/home.4st"/>
-      <File filePath="fgl/home.per"/>
+    <Application binaryName="home" id="1984330704" label="home" targetDirectory="$(ProjectDir)/universal/home">
+      <File filePath="universal/home/home.4gl"/>
+      <File filePath="universal/home/home.4st"/>
+      <File filePath="universal/home/home.per"/>
+      <File filePath="universal/home/pool_doctors_taptocontinue_blue.png"/>
+      <File filePath="universal/home/README.txt"/>
+    </Application>
+    <Application binaryName="noteditable_buttonedit" id="-1967112776" label="noteditable_buttonedit" targetDirectory="$(ProjectDir)/universal/noteditable_buttonedit">
+      <File filePath="universal/noteditable_buttonedit/noteditable_buttonedit.4gl"/>
+      <File filePath="universal/noteditable_buttonedit/noteditable_buttonedit.4st"/>
+      <File filePath="universal/noteditable_buttonedit/noteditable_buttonedit.per"/>
+      <File filePath="universal/noteditable_buttonedit/README.txt"/>
     </Application>
   </Group>
 </Project>
