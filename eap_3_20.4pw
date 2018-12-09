@@ -178,6 +178,12 @@
     </Group>
   </Group>
   <Group label="universal" language="Genero" targetDirectory="$(ProjectDir)/universal">
+    <Application binaryName="actionpanelposition" id="-816827291" label="actionpanelposition" targetDirectory="$(ProjectDir)/universal/actionpanelposition">
+      <File filePath="universal/actionpanelposition/actionpanelposition.4gl"/>
+      <File filePath="universal/actionpanelposition/actionpanelposition.4st"/>
+      <File filePath="universal/actionpanelposition/actionpanelposition.per"/>
+      <File filePath="universal/actionpanelposition/README.txt"/>
+    </Application>
     <Application binaryName="application_window_title" id="221372458" label="application_window_title" targetDirectory="$(ProjectDir)/universal/application_window_title">
       <File filePath="universal/application_window_title/application_window_title.4gl"/>
       <File filePath="universal/application_window_title/application_window_title_main.per"/>
@@ -198,11 +204,34 @@
       <File filePath="universal/home/pool_doctors_taptocontinue_blue.png"/>
       <File filePath="universal/home/README.txt"/>
     </Application>
+    <Application binaryName="multicolumntable" id="555293622" label="multicolumntable" targetDirectory="$(ProjectDir)/universal/multicolumntable">
+      <File filePath="universal/multicolumntable/multicolumntable.4gl"/>
+      <File filePath="universal/multicolumntable/multicolumntable.4st"/>
+      <File filePath="universal/multicolumntable/multicolumntable_listview.per"/>
+      <File filePath="universal/multicolumntable/multicolumntable_listview_2col.per"/>
+      <File filePath="universal/multicolumntable/multicolumntable_listview_2col_number.per"/>
+      <File filePath="universal/multicolumntable/multicolumntable_matrix.per"/>
+      <File filePath="universal/multicolumntable/multicolumntable_scrollgrid.per"/>
+      <File filePath="universal/multicolumntable/multicolumntable_scrollgrid_label.per"/>
+      <File filePath="universal/multicolumntable/multicolumntable_scrollgrid_layouttag.per"/>
+      <File filePath="universal/multicolumntable/multicolumntable_scrollgrid_layouttag_label.per"/>
+      <File filePath="universal/multicolumntable/multicolumntable_table.per"/>
+      <File filePath="universal/multicolumntable/README.txt"/>
+    </Application>
     <Application binaryName="noteditable_buttonedit" id="-1967112776" label="noteditable_buttonedit" targetDirectory="$(ProjectDir)/universal/noteditable_buttonedit">
       <File filePath="universal/noteditable_buttonedit/noteditable_buttonedit.4gl"/>
       <File filePath="universal/noteditable_buttonedit/noteditable_buttonedit.4st"/>
       <File filePath="universal/noteditable_buttonedit/noteditable_buttonedit.per"/>
       <File filePath="universal/noteditable_buttonedit/README.txt"/>
     </Application>
+    <Application binaryName="openwindowsize" id="-1803126328" label="openwindowsize" targetDirectory="$(ProjectDir)/universal/openwindowsize">
+      <File filePath="universal/openwindowsize/openwindow13240.per"/>
+      <File filePath="universal/openwindowsize/openwindow3010.per"/>
+      <File filePath="universal/openwindowsize/openwindow3010min8025.per"/>
+      <File filePath="universal/openwindowsize/openwindow8025.per"/>
+      <File filePath="universal/openwindowsize/openwindowsize.4gl"/>
+      <File filePath="universal/openwindowsize/README.txt"/>
+    </Application>
+    <Application binaryName="toolbar" id="-1431418507" label="toolbar"/>
   </Group>
 </Project>

@@ -36,6 +36,8 @@ DEFINE style STRING = "default"
                 CALL FGL_WINMESSAGE("Warning",SFMT("FGLWINMESSAGE at %1", CURRENT HOUR TO FRACTION(1)),"exclamation")
             ON ACTION fglwinmessage_error ATTRIBUTES(TEXT="FGL_WINMESSAGE (Error)")
                 CALL FGL_WINMESSAGE("Error",SFMT("FGLWINMESSAGE at %1", CURRENT HOUR TO FRACTION(1)),"stop")
+            ON ACTION fglwinmessage_multiline ATTRIBUTES(TEXT="FGL_WINMESSAGE (Multiline)")
+                CALL FGL_WINMESSAGE("Info",SFMT("FGLWINMESSAGE at %1\nLine 2", CURRENT HOUR TO FRACTION(1)),"info")
             ON ACTION popup ATTRIBUTES(TEXT="Popup")
                 LET style = "popup"
                 EXIT MENU
