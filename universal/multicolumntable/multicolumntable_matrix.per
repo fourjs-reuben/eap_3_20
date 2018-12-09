@@ -1,0 +1,30 @@
+LAYOUT  (TEXT="Matrix")
+GRID
+{
+                 W   D   L   F   A   P
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+}
+END
+END
+ATTRIBUTES
+PHANTOM formonly.major;
+PHANTOM formonly.minor;
+LABEL f01 = formonly.team;
+LABEL f02 = formonly.win, FORMAT="#&";
+LABEL f03 = formonly.draw,FORMAT="#&";
+LABEL f04 = formonly.loss,FORMAT="#&";
+LABEL f05 = formonly.for,  FORMAT="#&";
+LABEL f06 = formonly.against, FORMAT="#&";
+PHANTOM formonly.gd;
+LABEL f07 = formonly.pts,  FORMAT="#&";
+INSTRUCTIONS
+SCREEN RECORD scr(major, minor, team, win,draw,loss, for, against, gd,pts)

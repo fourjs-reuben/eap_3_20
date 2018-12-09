@@ -1,0 +1,22 @@
+LAYOUT (TEXT="ListView 2 Column Number")
+
+TABLE (STYLE="list")
+{
+[f01           |f02                     ]
+}
+
+END
+END
+ATTRIBUTES
+LABEL f01 = formonly.major;
+LABEL f02 = formonly.minor, JUSTIFY=RIGHT;
+PHANTOM formonly.team;
+PHANTOM formonly.win;
+PHANTOM formonly.draw;
+PHANTOM formonly.loss;
+PHANTOM formonly.for;
+PHANTOM formonly.against;
+PHANTOM formonly.gd;
+PHANTOM formonly.pts;
+INSTRUCTIONS
+SCREEN RECORD scr(major, minor, team, win,draw,loss, for, against, gd,pts)

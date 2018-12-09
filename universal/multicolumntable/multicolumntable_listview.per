@@ -1,0 +1,22 @@
+LAYOUT (TEXT="ListView")
+
+TABLE (STYLE="list")
+{
+[f01                                ]
+}
+
+END
+END
+ATTRIBUTES
+LABEL f01 = formonly.major, FONTPITCH=FIXED;
+PHANTOM formonly.minor;
+PHANTOM formonly.team;
+PHANTOM formonly.win;
+PHANTOM formonly.draw;
+PHANTOM formonly.loss;
+PHANTOM formonly.for;
+PHANTOM formonly.against;
+PHANTOM formonly.gd;
+PHANTOM formonly.pts;
+INSTRUCTIONS
+SCREEN RECORD scr(major, minor, team, win,draw,loss, for, against, gd,pts)

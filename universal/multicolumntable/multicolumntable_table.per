@@ -1,0 +1,29 @@
+LAYOUT  (TEXT="Table")
+TABLE (STYLE="default")
+{
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+[f01          |f02|f03|f04|f05|f06|f07]
+}
+END
+END
+ATTRIBUTES
+PHANTOM formonly.major;
+PHANTOM formonly.minor;
+f01 = formonly.team, TITLE="Team";
+f02 = formonly.win, TITLE="W", FORMAT="#&";
+f03 = formonly.draw, TITLE="D", FORMAT="#&";
+f04 = formonly.loss, TITLE="L", FORMAT="#&";
+f05 = formonly.for, TITLE="F", FORMAT="#&";
+f06 = formonly.against, TITLE="A", FORMAT="#&";
+PHANTOM formonly.gd;
+f07 = formonly.pts, TITLE="P", FORMAT="#&";
+INSTRUCTIONS
+SCREEN RECORD scr(major, minor, team, win,draw,loss, for, against, gd,pts)

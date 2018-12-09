@@ -1,0 +1,33 @@
+LAYOUT  (TEXT="ScrollGrid using LayoutTags and Labels")
+
+
+GRID
+{
+                  W   D   L   F   A   P
+<S s1                                   >
+ [f01          |f02|f03|f04|f05|f06|f07]
+ [f01          |f02|f03|f04|f05|f06|f07]
+ [f01          |f02|f03|f04|f05|f06|f07]
+ [f01          |f02|f03|f04|f05|f06|f07]
+ [f01          |f02|f03|f04|f05|f06|f07]
+ [f01          |f02|f03|f04|f05|f06|f07]
+ [f01          |f02|f03|f04|f05|f06|f07]
+ [f01          |f02|f03|f04|f05|f06|f07]
+ [f01          |f02|f03|f04|f05|f06|f07]
+ [f01          |f02|f03|f04|f05|f06|f07]
+}
+END
+ATTRIBUTES
+SCROLLGRID s1 : GRIDCHILDRENINPARENT;
+PHANTOM formonly.major;
+PHANTOM formonly.minor;
+LABEL f01 = formonly.team, TITLE="Team";
+LABEL f02 = formonly.win, TITLE="W", FORMAT="#&";
+LABEL f03 = formonly.draw, TITLE="D", FORMAT="#&";
+LABEL f04 = formonly.loss, TITLE="L", FORMAT="#&";
+LABEL f05 = formonly.for, TITLE="F", FORMAT="#&";
+LABEL f06 = formonly.against, TITLE="A", FORMAT="#&";
+PHANTOM formonly.gd;
+LABEL f07 = formonly.pts, TITLE="P", FORMAT="#&";
+INSTRUCTIONS
+SCREEN RECORD scr(major, minor, team, win,draw,loss, for, against, gd,pts)

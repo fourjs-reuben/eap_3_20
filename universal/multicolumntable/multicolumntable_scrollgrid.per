@@ -1,0 +1,19 @@
+LAYOUT  (TEXT="ScrollGrid")
+SCROLLGRID (WANTFIXEDPAGESIZE=NO)
+{
+ [f01          |f02|f03|f04|f05|f06|f07]
+}
+END
+ATTRIBUTES
+PHANTOM formonly.major;
+PHANTOM formonly.minor;
+EDIT f01 = formonly.team, TITLE="Team";
+EDIT f02 = formonly.win, TITLE="W", FORMAT="#&";
+EDIT f03 = formonly.draw, TITLE="D", FORMAT="#&";
+EDIT f04 = formonly.loss, TITLE="L", FORMAT="#&";
+EDIT f05 = formonly.for, TITLE="F", FORMAT="#&";
+EDIT f06 = formonly.against, TITLE="A", FORMAT="#&";
+PHANTOM formonly.gd;
+EDIT f07 = formonly.pts, TITLE="P", FORMAT="#&";
+INSTRUCTIONS
+SCREEN RECORD scr(major, minor, team, win,draw,loss, for, against, gd,pts)
