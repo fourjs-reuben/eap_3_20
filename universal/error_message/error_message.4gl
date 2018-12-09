@@ -10,6 +10,10 @@ DEFINE style STRING = "default"
                 ERROR SFMT("Error at %1", CURRENT HOUR TO FRACTION(1))
             ON ACTION error_red ATTRIBUTES(TEXT="Error (RED)")
                 ERROR SFMT("Error at %1", CURRENT HOUR TO FRACTION(1)) ATTRIBUTES(STYLE="red")
+            ON ACTION error_multiline ATTRIBUTES(TEXT="Error (Multiline)")
+                ERROR SFMT("Line 1 of Error at %1\nLine 2", CURRENT HOUR TO FRACTION(1)) 
+            ON ACTION error_big ATTRIBUTES(TEXT="Error (Big)")
+                ERROR SFMT("A very very very very very very very very very very very very very very very very very very very very long error message at %1", CURRENT HOUR TO FRACTION(1)) 
             ON ACTION modal_error ATTRIBUTES(TEXT="Modal Error")
                 ERROR SFMT("An error has occured at %1, select value from modal window", CURRENT HOUR TO FRACTION(1))
                 CALL ui.Interface.refresh() -- Force error to dispay in parent window
