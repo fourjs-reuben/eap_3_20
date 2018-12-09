@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ANSI_X3.4-1968"?>
+<StyleList>
+  <Style name="Window">
+     <StyleAttribute name="windowType" value="normal" />
+  </Style>
+ 
+  <Style name="Window.top">
+     <StyleAttribute name="actionPanelPosition" value="top" />
+     <StyleAttribute name="ringMenuPosition" value="top" />
+  </Style>
+  <Style name="Window.pleft">
+     <StyleAttribute name="actionPanelPosition" value="left" />
+     <StyleAttribute name="ringMenuPosition" value="left" />
+  </Style>
+  <Style name="Window.right">
+     <StyleAttribute name="actionPanelPosition" value="right" />
+     <StyleAttribute name="ringMenuPosition" value="right" />
+  </Style>
+  <Style name="Window.bottom">
+     <StyleAttribute name="actionPanelPosition" value="bottom" />
+     <StyleAttribute name="ringMenuPosition" value="bottom" />
+  </Style>  
+</StyleList>
