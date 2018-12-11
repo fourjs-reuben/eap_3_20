@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="-47606290" gstVersion="30a0a" version="3.2">
+<Project defaultApplication="3754087" gstVersion="30a0a" version="3.2">
   <Settings>
     <DynamicProperties version="2">
       <DynamicProperty description="Accent color (Android 5.0 and later)" initialValue="#9575CD" isDefaultInherited="false" isHidden="false" label="Accent color" name="gma-accent-color" readOnly="false" type="COLOR"/>
@@ -75,6 +75,16 @@
     </Application>
     <Application binaryName="variable_initializer" id="-451854561" label="variable_initializer">
       <File filePath="fgl/variable_initializer.4gl"/>
+    </Application>
+  </Group>
+  <Group label="gas" language="Genero" targetDirectory="$(ProjectDir)/gas">
+    <Application binaryName="end_url" id="3754087" label="end_url" targetDirectory="$(ProjectDir)/gas/end_url">
+      <File filePath="gas/end_url/end_url.4gl"/>
+      <File filePath="gas/end_url/end_url.xcf"/>
+    </Application>
+    <Application binaryName="fgl_vmproxy_start_url" id="1577595690" label="fgl_vmproxy_start_url" targetDirectory="$(ProjectDir)/gas/fgl_vmproxy_start_url">
+      <File filePath="gas/fgl_vmproxy_start_url/fgl_vmproxy_start_url.4gl"/>
+      <File filePath="gas/fgl_vmproxy_start_url/fgl_vmproxy_start_url.per"/>
     </Application>
   </Group>
   <Group label="ggc" language="Genero" targetDirectory="$(ProjectDir)/ggc"/>
