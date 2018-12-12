@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="-816827291" gstVersion="31401" version="3.3">
+<Project defaultApplication="1134416208" gstVersion="31401" version="3.3">
   <Settings>
     <DynamicProperties version="2">
       <DynamicProperty description="Accent color (Android 5.0 and later)" initialValue="#9575CD" isDefaultInherited="false" isHidden="false" label="Accent color" name="gma-accent-color" readOnly="false" type="COLOR"/>
@@ -73,6 +73,13 @@
     </Application>
     <Application binaryName="named_parameters" id="-555777272" label="named_parameters">
       <File filePath="fgl/named_parameters.4gl"/>
+    </Application>
+    <Application binaryName="qualify_imports" id="1134416208" label="qualify_imports">
+      <File excludeFromLink="true" filePath="fgl/qualify_imports1.4gl"/>
+      <File excludeFromLink="true" filePath="fgl/qualify_imports2.4gl"/>
+      <File excludeFromLink="true" filePath="fgl/qualify_imports3.4gl"/>
+      <File filePath="fgl/qualify_imports_lib.4gl"/>
+      <File filePath="fgl/qualify_imports_main.4gl"/>
     </Application>
     <Application binaryName="trim_whitespace" id="727441643" label="trim_whitespace">
       <File filePath="fgl/trim_whitespace.4gl"/>

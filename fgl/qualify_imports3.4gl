@@ -1,0 +1,6 @@
+FUNCTION ccc()
+    DISPLAY "ccc"
+END FUNCTION
+
+FUNCTION init()
+END FUNCTION

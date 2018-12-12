@@ -1,0 +1,6 @@
+FUNCTION aaa()
+    DISPLAY "aaa"
+END FUNCTION
+
+FUNCTION init()
+END FUNCTION
