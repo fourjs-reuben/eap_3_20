@@ -1,6 +1,5 @@
 MAIN
-#TODO nothing
-#BUG nothing
+
     MENU ""
         ON ACTION fename
             MESSAGE ui.Interface.getFrontEndName()
