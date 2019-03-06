@@ -20,4 +20,8 @@
      <StyleAttribute name="actionPanelPosition" value="bottom" />
      <StyleAttribute name="ringMenuPosition" value="bottom" />
   </Style>  
+  <Style name="Window.chrome">
+     <StyleAttribute name="actionPanelPosition" value="chrome" />
+     <StyleAttribute name="ringMenuPosition" value="chrome" />
+  </Style>  
 </StyleList>

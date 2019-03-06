@@ -28,6 +28,9 @@ DEFINE window_opened_flag BOOLEAN = FALSE
             ON ACTION right ATTRIBUTES(TEXT="Right")
                 LET style = "right"
                 EXIT MENU
+            ON ACTION chrome ATTRIBUTES(TEXT="Chrome")
+                LET style = "chrome"
+                EXIT MENU
             ON ACTION overflow ATTRIBUTES(TEXT="Overflow")
                 CALL do_overflow()
             ON ACTION closewindow ATTRIBUTES(TEXT="Close Window")
