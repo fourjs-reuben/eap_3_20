@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ANSI_X3.4-1968"?>
+<StyleList>
+  <Style name="Window">
+     <StyleAttribute name="windowType" value="normal" />
+  </Style>
+ <Style name="Group.collapsible" >
+   <StyleAttribute name="collapsible" value="yes" />
+   <StyleAttribute name="initiallyCollapsed" value="yes" />
+</Style> 
+ <Style name="Image.empty" >
+   <StyleAttribute name="border" value="no" />
+</Style> 
+
+
+</StyleList>

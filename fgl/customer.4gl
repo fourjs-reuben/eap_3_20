@@ -1,0 +1,32 @@
+PUBLIC TYPE customerRec RECORD
+    id INTEGER,
+    NAME STRING
+END RECORD
+
+PUBLIC TYPE customerArr RECORD
+    customer DYNAMIC ARRAY OF customerRec
+END RECORD
+
+FUNCTION (c customerArr) can_view() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (c customerArr) can_add() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (c customerArr) can_update() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (c customerArr) can_delete() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (c customerRec) can_update_row() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (c customerRec) can_delete_row() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION

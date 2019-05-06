@@ -1,0 +1,33 @@
+PUBLIC TYPE supplierRec RECORD
+    id INTEGER,
+    NAME STRING
+END RECORD
+
+PUBLIC TYPE supplierArr RECORD
+    supplier DYNAMIC ARRAY OF supplierRec
+END RECORD
+
+FUNCTION (s supplierArr) can_view() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (s supplierArr) can_add() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (s supplierArr) can_update() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (s supplierArr) can_delete() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (s supplierRec) can_update_row() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+
+FUNCTION (s supplierRec) can_delete_row() RETURNS BOOLEAN
+    RETURN TRUE
+END FUNCTION
+

@@ -1,3 +1,8 @@
+DEFINE Context DICTIONARY ATTRIBUTE(WSContext)OF STRING
+DEFINE keys DYNAMIC ARRAY OF STRING
+DEFINE i INTEGER
+
+
 FUNCTION add_wsparam(
     a INTEGER ATTRIBUTES(WSParam),
     b INTEGER ATTRIBUTES(WSParam)
@@ -46,6 +51,11 @@ FUNCTION add_wsheader(
 
 DEFINE c INTEGER
 
+    LET keys = Context.getKeys()
+    DISPLAY "Here", keys.getLength()
+    FOR i = 1 TO keys.getLength()
+        DISPLAY keys[i],"=", Context[keys[i]]
+    END FOR
     LET c = a + b
     RETURN c
 END FUNCTION

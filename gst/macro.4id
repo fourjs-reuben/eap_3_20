@@ -1,0 +1,23 @@
+<ExtraIdentifiers version="2">
+  <ExtraIdentifiersSet identifiers="END_INPUT END_CONSTRUCT END_MENU END_INPUT" name="Macros" set="1">
+    <Style foregroundColor="ff0000" >
+      <Font family="Webdings" size="18" bold="TRUE" italic="FALSE" />
+    </Style>
+
+  </ExtraIdentifiersSet>
+  <ExtraIdentifiersSet identifiers="table1 table2" name="Tables" set="2">
+     <Style foregroundColor="00ff00" >
+      <Font family="Webdings" size="18" bold="TRUE" italic="FALSE" />
+    </Style>
+  </ExtraIdentifiersSet>
+  <ExtraIdentifiersSet identifiers="column1 column2" name="Columns" set="3">
+     <Style foregroundColor="0000ff" >
+      <Font family="Webdings" size="18" bold="TRUE" italic="FALSE" />
+    </Style>
+      </ExtraIdentifiersSet>
+    <ExtraIdentifiersSet identifiers="nvl iif" name="Operators" set="4">
+     <Style foregroundColor="ff00ff" >
+      <Font  size="18" bold="TRUE" italic="FALSE" />
+    </Style>
+  </ExtraIdentifiersSet>
+</ExtraIdentifiers>

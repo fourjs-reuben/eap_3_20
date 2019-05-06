@@ -1,11 +1,15 @@
+
+DEFINE mod_s1 STRING
+DEFINE mod_s2 STRING = "modular"
+
 MAIN
-DEFINE s1 STRING
+DEFINE s1 STRING 
 DEFINE s2 STRING = "foo"
 
-DEFINE i1 INTEGER
+DEFINE i1 INTEGER 
 DEFINE i2 INTEGER = 123
 
-DEFINE d1 DATE
+DEFINE d1 DATE 
 DEFINE d2 DATE = MDY(1,1,2000)
 --DEFINE d3 DATE = TODAY
 
@@ -15,6 +19,9 @@ DEFINE t2 DATETIME HOUR TO SECOND = DATETIME(0:0:0) HOUR TO SECOND
 
 DEFINE b1 BOOLEAN
 DEFINE b2 BOOLEAN = TRUE
+
+DEFINE yesno_flag CHAR(1)
+DEFINE yesno_flag2 CHAR(1) = "Y"
 
 DEFINE r1 RECORD
     r,g,b INTEGER
@@ -44,7 +51,9 @@ END RECORD = ["red":(r:255,g:0,b:0),
              ["green":(r:255,g:0,b:0),
              ["blue":(r:255,g:0,b:0)]}
 
-
+    
+    DISPLAY mod_s1
+    DISPLAY mod_s2
 
 
     DISPLAY s1

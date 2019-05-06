@@ -17,6 +17,10 @@ DEFINE tok base.StringTokenizer
 
     LET tok = base.StringTokenizer.createExt("|aaa||b\\|bb|ccc", "|", "\\", TRUE)
     LET tok = base.StringTokenizer.createExt(str:"|aaa||b\\|bb|ccc", delimiters:"|", escapeChar:"\\", withNulls:TRUE)
+
+    CALL fgl_report_configureXLSXOutput(NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+    CALL fgl_report_configureXLSXDevice (fromPage:NULL,toPage:NULL,removeWhitespace:NULL,ignoreRowAlignment:NULL, ignoreColumnAlignment:NULL, removeBackgroundImages:NULL,mergePages:NULL)
+    -- CALL fgl_report_configureXLSXDevice (fmergePages:NULL)
 END MAIN
 
 

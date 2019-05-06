@@ -5,9 +5,9 @@ IMPORT FGL qualify_imports3
 -- Copy the code below into the MAIN
 -- Uncomment and run qualify import
 MAIN
-    CALL aaa()
-    CALL bbb()
-    CALL ccc()
+    CALL qualify_imports1.aaa()
+    CALL qualify_imports2.bbb()
+    CALL qualify_imports3.ccc()
     CALL qualify_imports1.init()
     CALL qualify_imports2.init()
     CALL qualify_imports3.init()

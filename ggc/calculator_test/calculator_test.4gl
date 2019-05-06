@@ -42,6 +42,9 @@ FUNCTION play()
   CALL ggc.wait(3821)
   CALL ggc.setValue("1")
 
+  CALL ggc.setValue("2")
+
+
   # Trigger key Tab
   CALL ggc.wait(0)
   CALL ggc.key("Tab")

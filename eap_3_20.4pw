@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="1134416208" gstVersion="31401" version="3.3">
+<Project defaultApplication="2002751808" gstVersion="31402" version="3.3">
   <Settings>
     <DynamicProperties version="2">
       <DynamicProperty description="Accent color (Android 5.0 and later)" initialValue="#9575CD" isDefaultInherited="false" isHidden="false" label="Accent color" name="gma-accent-color" readOnly="false" type="COLOR"/>
@@ -65,13 +65,41 @@
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
   <Group id="866400942" label="fgl" language="Genero" targetDirectory="$(ProjectDir)/fgl">
+    <Application binaryName="clearfilecache" id="1266411432" label="clearfilecache">
+      <File filePath="fgl/blue.png"/>
+      <File filePath="fgl/clearfilecache.4gl"/>
+      <File filePath="fgl/clearfilecache.per"/>
+      <File filePath="fgl/red.png"/>
+    </Application>
     <Application binaryName="formatter" id="-1061308337" label="formatter">
       <File filePath="fgl/formatter.4gl"/>
     </Application>
-    <Application binaryName="method_function" id="-390601816" label="method_function">
-      <File filePath="fgl/method_function.4gl"/>
+    <Application binaryName="inout" id="-1090550784" label="inout">
+      <File filePath="fgl/inout.4gl"/>
     </Application>
-    <Application binaryName="named_parameters" id="-555777272" label="named_parameters">
+    <Application binaryName="interface" id="873105940" label="interface">
+      <File excludeFromLink="true" filePath="fgl/circle.4gl"/>
+      <File filePath="fgl/interface_test.4gl"/>
+      <File excludeFromLink="true" filePath="fgl/rectangle.4gl"/>
+    </Application>
+    <Application binaryName="interface2" id="1053253732" label="interface2">
+      <File filePath="fgl/address.4gl"/>
+      <File filePath="fgl/customer.4gl"/>
+      <File filePath="fgl/field.4gl"/>
+      <File filePath="fgl/interface2.4gl"/>
+      <File filePath="fgl/supplier.4gl"/>
+    </Application>
+    <Application binaryName="interface3" id="361465768" label="interface3">
+      <File filePath="fgl/interface3.4gl"/>
+    </Application>
+    <Application binaryName="interface4" id="-702264532" label="interface4">
+      <File filePath="fgl/interface4.4gl"/>
+    </Application>
+    <Application binaryName="menudialogclose" id="272739068" label="menudialogclose">
+      <File filePath="fgl/menudialogclose.4gl"/>
+      <File filePath="fgl/menudialogclose.per"/>
+    </Application>
+    <Application binaryName="named_parameters" externalDependencies="libgre.42x" id="-555777272" label="named_parameters">
       <File filePath="fgl/named_parameters.4gl"/>
     </Application>
     <Application binaryName="qualify_imports" id="1134416208" label="qualify_imports">
@@ -81,8 +109,19 @@
       <File filePath="fgl/qualify_imports_lib.4gl"/>
       <File filePath="fgl/qualify_imports_main.4gl"/>
     </Application>
+    <Application binaryName="returns" id="245052108" label="returns">
+      <File filePath="fgl/returns.4gl"/>
+    </Application>
+    <Application binaryName="stack" id="32473908" label="stack">
+      <File filePath="fgl/stack.4gl"/>
+      <File filePath="fgl/stack.4st"/>
+      <File filePath="fgl/stack.per"/>
+    </Application>
     <Application binaryName="trim_whitespace" id="727441643" label="trim_whitespace">
       <File filePath="fgl/trim_whitespace.4gl"/>
+    </Application>
+    <Application binaryName="type_method" id="-390601816" label="type_method">
+      <File filePath="fgl/type_method.4gl"/>
     </Application>
     <Application binaryName="variable_initializer" id="-451854561" label="variable_initializer">
       <File filePath="fgl/variable_initializer.4gl"/>
@@ -98,7 +137,38 @@
       <File filePath="gas/fgl_vmproxy_start_url/fgl_vmproxy_start_url.per"/>
     </Application>
   </Group>
+  <Group id="-81453304" label="gbc" language="Genero" targetDirectory="$(ProjectDir)/gbc">
+    <Application binaryName="collapsible_group" id="1376200976" label="collapsible_group">
+      <File filePath="gbc/collapsible_groupbox.4gl"/>
+      <File filePath="gbc/collapsible_groupbox.4st"/>
+      <File filePath="gbc/collapsible_groupbox.per"/>
+      <File filePath="gbc/collapsible_groupbox_withstretch.per"/>
+    </Application>
+    <Application binaryName="hbox_splitview" id="1265831002" label="hbox_splitview">
+      <File filePath="gbc/hbox_splitview.4gl"/>
+      <File filePath="gbc/hbox_splitview.4st"/>
+      <File filePath="gbc/hbox_splitview.per"/>
+      <File filePath="gbc/hbox_splitview_group.per"/>
+      <File filePath="gbc/hbox_splitview_hidden.per"/>
+      <File filePath="gbc/hbox_splitview_nested.per"/>
+      <File filePath="gbc/hbox_splitview_split.per"/>
+      <File filePath="gbc/hbox_splitview_three.per"/>
+    </Application>
+    <Application binaryName="theme" id="1261063275" label="theme">
+      <File filePath="gbc/theme.4gl"/>
+    </Application>
+  </Group>
   <Group id="1663695318" label="ggc" language="Genero" targetDirectory="$(ProjectDir)/ggc">
+    <Group id="1893677293" label="array_test" targetDirectory="$(ProjectDir)/ggc/array">
+      <Application binaryName="array" id="1157050720" label="array">
+        <File filePath="ggc/array/array.4gl"/>
+        <File filePath="ggc/array/array.per"/>
+      </Application>
+      <Application binaryName="array_test" commandLineArguments="tcp --command-line &quot;fglrun array&quot;" id="739169520" label="array_test">
+        <File filePath="ggc/array/array_test.4gl"/>
+        <File filePath="ggc/array/array_test.log"/>
+      </Application>
+    </Group>
     <Group id="1925681495" label="calculator_test" targetDirectory="$(ProjectDir)/ggc/calculator_test">
       <Application binaryName="calculator" id="1918870388" label="calculator">
         <File filePath="ggc/calculator_test/calculator.4gl"/>
@@ -108,7 +178,27 @@
         <File filePath="ggc/calculator_test/calculator_test.4gl"/>
         <File filePath="ggc/calculator_test/calculator_test.log"/>
       </Application>
+      <Application binaryName="calculator_test2" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;" id="2002751808" label="calculator_test2">
+        <File filePath="ggc/calculator_test/calculator_test2.4gl"/>
+      </Application>
     </Group>
+    <Group id="-457142451" label="frontcall_test" targetDirectory="$(ProjectDir)/ggc/frontcall"/>
+  </Group>
+  <Group id="-213222076" label="grw" language="Genero" targetDirectory="$(ProjectDir)/grw">
+    <Application binaryName="paragraph" id="-1244562200" label="paragraph">
+      <File filePath="grw/paragraph.4rp"/>
+    </Application>
+  </Group>
+  <Group id="1351826592" label="gst" language="Genero" targetDirectory="$(ProjectDir)/gst">
+    <Application binaryName="debugger_array" id="-373839462" label="debugger_array">
+      <File filePath="gst/debugger_array.4gl"/>
+    </Application>
+    <Application binaryName="extra_identifiers" id="268501371" label="extra_identifiers">
+      <File filePath="gst/macro.4id"/>
+    </Application>
+    <Application binaryName="gslint" id="1663775674" label="gslint">
+      <File filePath="gst/gslint_test.4gl"/>
+    </Application>
   </Group>
   <Group id="904424800" label="gws" language="Genero" targetDirectory="$(ProjectDir)/gws">
     <Group environment="value:FGLAPPSERVER=8090" id="-575532911" label="01_parameter_passing" targetDirectory="$(ProjectDir)/gws/parameter_passing">
@@ -208,6 +298,20 @@
         </Application>
       </Group>
     </Group>
+    <Group environment="value:FGLAPPSERVER=8090" id="-569472649" label="07_error_handling" targetDirectory="$(ProjectDir)/gws/error_handling">
+      <Group id="1149229840" label="client" targetDirectory="$(ProjectDir)/gws/error_handling/client">
+        <Application binaryName="calculator_client" id="-1322609194" label="calculator_client">
+          <File excludeFromLink="true" filePath="gws/error_handling/client/calculator.4gl"/>
+          <File filePath="gws/error_handling/client/calculator_test.4gl"/>
+        </Application>
+      </Group>
+      <Group id="137465636" label="server" targetDirectory="$(ProjectDir)/gws/error_handling/server">
+        <Application binaryName="calculator_server" id="1816072352" label="calculator_server">
+          <File filePath="gws/error_handling/server/calculator_server.4gl"/>
+          <File filePath="gws/error_handling/server/calculator_server_main.4gl"/>
+        </Application>
+      </Group>
+    </Group>
   </Group>
   <Group id="-1170637424" label="universal" language="Genero" targetDirectory="$(ProjectDir)/universal">
     <Application binaryName="actionpanelposition" id="-816827291" label="actionpanelposition" targetDirectory="$(ProjectDir)/universal/actionpanelposition">
@@ -218,6 +322,8 @@
     </Application>
     <Application binaryName="application_window_title" id="221372458" label="application_window_title" targetDirectory="$(ProjectDir)/universal/application_window_title">
       <File filePath="universal/application_window_title/application_window_title.4gl"/>
+      <File filePath="universal/application_window_title/application_window_title_form1.per"/>
+      <File filePath="universal/application_window_title/application_window_title_form2.per"/>
       <File filePath="universal/application_window_title/application_window_title_main.per"/>
       <File filePath="universal/application_window_title/application_window_title_modal.per"/>
       <File filePath="universal/application_window_title/README.txt"/>
@@ -235,6 +341,9 @@
       <File filePath="universal/home/home.per"/>
       <File filePath="universal/home/pool_doctors_taptocontinue_blue.png"/>
       <File filePath="universal/home/README.txt"/>
+    </Application>
+    <Application binaryName="interfaceget" environment="dir:FGLGBCDIR=/Applications/fourjs/gbc/cust/1.00.50_cef/dist/customization/default" id="1044986271" label="interfaceget" targetDirectory="$(ProjectDir)/universal/interfaceget">
+      <File filePath="universal/interfaceget/interfaceget.4gl"/>
     </Application>
     <Application binaryName="multicolumntable" id="555293622" label="multicolumntable" targetDirectory="$(ProjectDir)/universal/multicolumntable">
       <File filePath="universal/multicolumntable/multicolumntable.4gl"/>
@@ -263,6 +372,10 @@
       <File filePath="universal/openwindowsize/openwindow8025.per"/>
       <File filePath="universal/openwindowsize/openwindowsize.4gl"/>
       <File filePath="universal/openwindowsize/README.txt"/>
+    </Application>
+    <Application binaryName="run" id="-1373976824" label="run" targetDirectory="$(ProjectDir)/universal/run">
+      <File filePath="universal/run/run.4gl"/>
+      <File filePath="universal/run/run.per"/>
     </Application>
     <Application binaryName="toolbar" id="-1431418507" label="toolbar"/>
   </Group>

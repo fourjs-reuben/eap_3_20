@@ -1,6 +1,9 @@
 MAIN
-DEFINE a,b,c INTEGER = 0
+DEFINE a,b,c INTEGER 
 
+    LET a = 0
+    LET b = 0
+    LET c = 0
     DEFER INTERRUPT
     DEFER QUIT
 
