@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="2002751808" gstVersion="31402" version="3.3">
+<Project defaultApplication="-958766144" gstVersion="31406" version="3.3">
   <Settings>
     <DynamicProperties version="2">
       <DynamicProperty description="Accent color (Android 5.0 and later)" initialValue="#9575CD" isDefaultInherited="false" isHidden="false" label="Accent color" name="gma-accent-color" readOnly="false" type="COLOR"/>
@@ -62,17 +62,35 @@
       <NodeInfo mimeType="pm/package" properties="packageId;packageLabel;packageVersion;packageVersionName;launchScreen;launchScreen1136x640;launchScreen750x1334;launchScreen1334x750;launchScreen1242x2208;launchScreen2208x1242;launchScreen1125x2436;launchScreen2436x1125;launchScreen768x1024;launchScreen1024x768;launchScreen1536x2048;launchScreen2048x1536;launchScreen2224x1668;launchScreen1668x2224;launchScreen2048x2732;launchScreen2732x2048;launchScreenXib;icon29x29;icon40x40;icon58x58;icon60x60;icon76x76;icon80x80;icon87x87;icon120x120;icon152x152;icon167x167;icon180x180;icon1024x1024;gma-primary-color;gma-primary-dark-color;gma-accent-color;gma-actionbar-color;gma-primaryText-color;gma-windowBackground-color;gma-navigationBarBackground-color;icon-ldpi;icon-mdpi;icon-hdpi;icon-xhdpi;icon-xxhdpi;status-icon-mdpi;status-icon-hdpi;status-icon-xhdpi;permissions;required;gma-cordova;gmi-cordova"/>
     </NodeInfos>
   </Settings>
-  <LanguageList version="1.0"/>
+  <LanguageList version="1.0">
+    <Language name="Genero">
+      <BuildRuleList>
+        <BuildRule additionalDependencies="" commands="$(fglcomp) $(Implicit) $(CompilerOptions) &quot;$(InputPath)&quot;;$(move) &quot;$(InputDir)/$(InputBaseName).42m&quot; &quot;$(TargetDir)/$(InputBaseName).42m&quot;;$(gslint) &quot;$(InputPath)&quot;" description="Genero compiler" enabled="true" fileType="application/genero-4gl" intermediateFiles="" outputFiles="$(TargetDir)/$(InputBaseName).42m"/>
+      </BuildRuleList>
+      <LinkRuleList/>
+      <VariableList/>
+    </Language>
+  </LanguageList>
   <PlatformList version="1.0"/>
   <Group id="866400942" label="fgl" language="Genero" targetDirectory="$(ProjectDir)/fgl">
+    <Application binaryName="circulardependency" id="-1081230600" label="circulardependency">
+      <File excludeFromLink="true" filePath="fgl/circular_a.4gl"/>
+      <File excludeFromLink="true" filePath="fgl/circular_b.4gl"/>
+      <File excludeFromLink="true" filePath="fgl/circular_c.4gl"/>
+      <File filePath="fgl/circular_main.4gl"/>
+    </Application>
     <Application binaryName="clearfilecache" id="1266411432" label="clearfilecache">
       <File filePath="fgl/blue.png"/>
       <File filePath="fgl/clearfilecache.4gl"/>
       <File filePath="fgl/clearfilecache.per"/>
       <File filePath="fgl/red.png"/>
     </Application>
+    <Application binaryName="dotstar" id="351845412" label="dotstar">
+      <File filePath="fgl/dotstar.4gl"/>
+    </Application>
     <Application binaryName="formatter" id="-1061308337" label="formatter">
       <File filePath="fgl/formatter.4gl"/>
+      <File filePath="fgl/include.inc"/>
     </Application>
     <Application binaryName="inout" id="-1090550784" label="inout">
       <File filePath="fgl/inout.4gl"/>
@@ -160,11 +178,11 @@
   </Group>
   <Group id="1663695318" label="ggc" language="Genero" targetDirectory="$(ProjectDir)/ggc">
     <Group id="1893677293" label="array_test" targetDirectory="$(ProjectDir)/ggc/array">
-      <Application binaryName="array" id="1157050720" label="array">
+      <Application binaryName="array" excludeFromBuild="true" id="1157050720" label="array">
         <File filePath="ggc/array/array.4gl"/>
         <File filePath="ggc/array/array.per"/>
       </Application>
-      <Application binaryName="array_test" commandLineArguments="tcp --command-line &quot;fglrun array&quot;" id="739169520" label="array_test">
+      <Application binaryName="array_test" commandLineArguments="tcp --command-line &quot;fglrun array&quot;" excludeFromBuild="true" id="739169520" label="array_test">
         <File filePath="ggc/array/array_test.4gl"/>
         <File filePath="ggc/array/array_test.log"/>
       </Application>
@@ -178,11 +196,61 @@
         <File filePath="ggc/calculator_test/calculator_test.4gl"/>
         <File filePath="ggc/calculator_test/calculator_test.log"/>
       </Application>
+      <Application binaryName="calculator_test10" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="-481079004" label="calculator_test10">
+        <File filePath="ggc/calculator_test/calculator_test10.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test11" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="-1089698960" label="calculator_test11">
+        <File filePath="ggc/calculator_test/calculator_test11.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test12" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="-265407232" label="calculator_test12">
+        <File filePath="ggc/calculator_test/calculator_test12.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test13" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;   " id="349775268" label="calculator_test13">
+        <File filePath="calculator_test13.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test14" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;   " id="-1607244206" label="calculator_test14">
+        <File filePath="ggc/calculator_test/calculator_test14.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test15" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="-1819561481" label="calculator_test15">
+        <File filePath="ggc/calculator_test/calculator_test15.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test16" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="881299051" label="calculator_test16">
+        <File filePath="ggc/calculator_test/calculator_test16.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test17" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="-347001200" label="calculator_test17">
+        <File filePath="calculator_test17.4gl"/>
+      </Application>
       <Application binaryName="calculator_test2" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;" id="2002751808" label="calculator_test2">
         <File filePath="ggc/calculator_test/calculator_test2.4gl"/>
       </Application>
+      <Application binaryName="calculator_test3" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  --forward-gui localhost:0" id="1048820008" label="calculator_test3">
+        <File filePath="ggc/calculator_test/calculator_test3.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test4" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  --forward-gui localhost:0" id="371549804" label="calculator_test4">
+        <File filePath="gws/crud/client/calculator_test4.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test5" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="1160527038" label="calculator_test5">
+        <File filePath="ggc/calculator_test/calculator_test5.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test6" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="1834403323" label="calculator_test6">
+        <File filePath="ggc/calculator_test/calculator_test6.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test7" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="799750128" label="calculator_test7">
+        <File filePath="ggc/calculator_test/calculator_test7.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test8" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="1002682020" label="calculator_test8">
+        <File filePath="ggc/calculator_test/calculator_test8.4gl"/>
+      </Application>
+      <Application binaryName="calculator_test9" commandLineArguments="tcp --command-line &quot;fglrun calculator&quot;  " id="770288468" label="calculator_test9">
+        <File filePath="ggc/calculator_test/calculator_test9.4gl"/>
+      </Application>
     </Group>
-    <Group id="-457142451" label="frontcall_test" targetDirectory="$(ProjectDir)/ggc/frontcall"/>
+    <Group id="-849636483" label="prompt_test" targetDirectory="$(ProjectDir)/ggc/prompt_test">
+      <Application binaryName="prompt" id="-676175602" label="prompt">
+        <File filePath="ggc/prompt_test/prompt.4gl"/>
+        <File filePath="ggc/prompt_test/prompt.per"/>
+      </Application>
+    </Group>
   </Group>
   <Group id="-213222076" label="grw" language="Genero" targetDirectory="$(ProjectDir)/grw">
     <Application binaryName="paragraph" id="-1244562200" label="paragraph">
@@ -193,11 +261,18 @@
     <Application binaryName="debugger_array" id="-373839462" label="debugger_array">
       <File filePath="gst/debugger_array.4gl"/>
     </Application>
+    <Application binaryName="editor" id="164866440" label="editor">
+      <File filePath="gst/editor.log"/>
+    </Application>
     <Application binaryName="extra_identifiers" id="268501371" label="extra_identifiers">
       <File filePath="gst/macro.4id"/>
     </Application>
     <Application binaryName="gslint" id="1663775674" label="gslint">
       <File filePath="gst/gslint_test.4gl"/>
+    </Application>
+    <Application binaryName="stack" id="2079768486" label="stack">
+      <File filePath="gst/stack.4db"/>
+      <File filePath="gst/stack.4fd"/>
     </Application>
   </Group>
   <Group id="904424800" label="gws" language="Genero" targetDirectory="$(ProjectDir)/gws">
@@ -213,7 +288,7 @@
         </Application>
       </Group>
       <Group id="-1332200398" label="server" targetDirectory="$(ProjectDir)/gws/parameter_passing/server">
-        <Application binaryName="calculator_server" id="-737409012" label="calculator_server">
+        <Application binaryName="calculator_server" environment="value:FGLWSDEBUG=9" id="-737409012" label="calculator_server">
           <File excludeFromLink="true" filePath="gws/parameter_passing/server/calculator_server.4gl"/>
           <File filePath="gws/parameter_passing/server/calculator_server_main.4gl"/>
         </Application>
@@ -274,13 +349,13 @@
         <File filePath="gws/crud/README.txt"/>
       </Library>
       <Group id="843427352" label="client" targetDirectory="$(ProjectDir)/gws/crud/client">
-        <Application binaryName="crud_test" id="-1829518384" label="crud_test">
+        <Application binaryName="crud_test" environment="value:FGLWSDEBUG=3" id="-1829518384" label="crud_test">
           <File excludeFromLink="true" filePath="gws/crud/client/crud.4gl"/>
           <File filePath="gws/crud/client/crud_test.4gl"/>
         </Application>
       </Group>
       <Group id="1605934120" label="server" targetDirectory="$(ProjectDir)/gws/crud/server">
-        <Application binaryName="crud" id="-281498817" label="crud">
+        <Application binaryName="crud" environment="value:FGLWSDEBUG=3" id="-281498817" label="crud">
           <File excludeFromLink="true" filePath="gws/crud/server/crud.4gl"/>
           <File filePath="gws/crud/server/crud_main.4gl"/>
         </Application>

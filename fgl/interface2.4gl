@@ -42,7 +42,7 @@ DEFINE rec recordType
 DEFINE row rowType
 DEFINE FIELD fieldType
 
-    LET field
+   
 END MAIN
 
 

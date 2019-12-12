@@ -1,4 +1,5 @@
 MAIN
+DEFINE
  i RECORD
     item DYNAMIC ARRAY OF INTEGER
 END RECORD
@@ -13,7 +14,7 @@ END INTERFACE
 
 DEFINE t arr
 
-    LET t = a
+    #LET t = a
 
 
 

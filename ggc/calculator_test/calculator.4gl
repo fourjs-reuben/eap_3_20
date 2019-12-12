@@ -17,6 +17,12 @@ DEFINE a,b,c INTEGER
     INPUT BY NAME a, b,c  ATTRIBUTES(WITHOUT DEFAULTS=TRUE, ACCEPT=FALSE, CANCEL=FALSE)
         ON ACTION add
             LET c = a + b
+           --MENU "Error" ATTRIBUTES(STYLE="dialog", COMMENT="An error has occured, contact support")
+           -- ON ACTION accept
+           --     EXIT MENU
+           -- END MENU
+           
+       
         ON ACTION close
             EXIT INPUT
     END INPUT

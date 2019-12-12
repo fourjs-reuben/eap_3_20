@@ -3,7 +3,7 @@ VBOX
 GROUP (TEXT="Calculator")
 GRID
 {
-[f01       ]+[f02       ]=[f03       ][b01    ]
+[f01       ]+[f02       ]=[f03       ][b01    ][b02    ]
 
 }
 END
@@ -14,5 +14,6 @@ END
 ATTRIBUTES
 f01 = formonly.a TYPE INTEGER;
 f02 = formonly.b TYPE INTEGER;
-f03 = formonly.c TYPE INTEGER;#, NOENTRY;
+f03 = formonly.c TYPE INTEGER,NOENTRY;
 BUTTON b01: add, TEXT="Add";
+BUTTON b02: subtract, TEXT="Subtract";

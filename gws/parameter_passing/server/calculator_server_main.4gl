@@ -1,8 +1,6 @@
 IMPORT com
 IMPORT FGL calculator_server
 
-
-
 MAIN
 DEFINE result INTEGER
 
