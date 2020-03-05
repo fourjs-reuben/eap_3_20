@@ -40,9 +40,15 @@ DEFINE list RECORD ATTRIBUTE(XMLName = 'data')
         ON ACTION get
             PROMPT "Enter index" FOR idx
             CALL crud.read(idx) RETURNING wsstatus, rec.*
-            DISPLAY wsstatus
-            DISPLAY rec.*
-
+            CASE
+                WHEN wsstatus = crud.C_SUCCESS
+                    DISPLAY "Found=", rec.*
+                WHEN wsstatus = crud.C_USERERROR 
+                    DISPLAY "ERROR=",crud.userError.message
+                OTHERWISE
+                    DISPLAY "Some other errors"
+            END CASE
+            
         ON ACTION list
             CALL crud.list() RETURNING wsstatus, list.*
             DISPLAY wsstatus

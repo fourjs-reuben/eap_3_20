@@ -1,3 +1,4 @@
+IMPORT com
 TYPE tableNameType RECORD
     id INTEGER,
     str STRING,
@@ -7,6 +8,10 @@ END RECORD
 
 TYPE tableNameListType RECORD
     rows DYNAMIC ARRAY OF tableNameType
+END RECORD
+
+PUBLIC DEFINE userError RECORD ATTRIBUTE(WSError="User error")
+  message STRING
 END RECORD
 
 
@@ -46,14 +51,20 @@ END FUNCTION
 
 
 FUNCTION read(id  INTEGER ATTRIBUTES(WSParam))
-    ATTRIBUTES(WSGet, WSPath="/tableName/{id}")
+    ATTRIBUTES(WSGet, WSPath="/tableName/{id}", WSThrows="400:@userError")
     RETURNS tableNameType ATTRIBUTES(WSName="rec", WSMedia="application/json,application/xml")
 
 DEFINE d tableNameType
 
     SELECT * INTO d.* FROM tableName WHERE @id = id
+    IF SQLCA.sqlcode == NOTFOUND THEN
+        LET userError.message = SFMT("Could not find tableName with id :%1",id)
+        CALL com.WebServiceEngine.SetRestError(400,userError)
+    END IF
     RETURN d.*
 END FUNCTION
+
+
 
 
 
