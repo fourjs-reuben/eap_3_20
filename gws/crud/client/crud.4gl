@@ -351,7 +351,7 @@ PUBLIC FUNCTION read(p_id INTEGER) RETURNS(INTEGER, readResponseBodyType)
                 END IF
                 RETURN -1, resp_body.*
 
-            WHEN 400 #User error
+            WHEN 404 #User error
                 IF contentType MATCHES "*application/json*" THEN
                     # Parse JSON response
                     LET json_body = resp.getTextResponse()
