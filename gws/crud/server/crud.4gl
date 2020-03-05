@@ -51,7 +51,7 @@ END FUNCTION
 
 
 FUNCTION read(id  INTEGER ATTRIBUTES(WSParam))
-    ATTRIBUTES(WSGet, WSPath="/tableName/{id}", WSThrows="400:@userError")
+    ATTRIBUTES(WSGet, WSPath="/tableName/{id}", WSThrows="404:@userError")
     RETURNS tableNameType ATTRIBUTES(WSName="rec", WSMedia="application/json,application/xml")
 
 DEFINE d tableNameType
@@ -59,7 +59,7 @@ DEFINE d tableNameType
     SELECT * INTO d.* FROM tableName WHERE @id = id
     IF SQLCA.sqlcode == NOTFOUND THEN
         LET userError.message = SFMT("Could not find tableName with id :%1",id)
-        CALL com.WebServiceEngine.SetRestError(400,userError)
+        CALL com.WebServiceEngine.SetRestError(404,userError)
     END IF
     RETURN d.*
 END FUNCTION
