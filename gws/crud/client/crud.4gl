@@ -77,6 +77,7 @@ END RECORD
 PUBLIC # Default User error 400
     DEFINE userError_400
     userError_400ErrorType
+
 PUBLIC # Default User error 404
 DEFINE userError_404 userError_404ErrorType
 
@@ -141,7 +142,7 @@ PUBLIC FUNCTION list() RETURNS(INTEGER, listResponseBodyType)
         LET contentType = resp.getHeader("Content-Type")
         CASE resp.getStatusCode()
 
-            WHEN 200 #Success
+            WHEN 200 #Returns all rows of a database table
                 IF contentType MATCHES "*application/json*" THEN
                     # Parse JSON response
                     LET json_body = resp.getTextResponse()
@@ -167,6 +168,7 @@ PUBLIC FUNCTION list() RETURNS(INTEGER, listResponseBodyType)
 END FUNCTION
 #
 # VERB: POST
+# DESCRIPTION: Inserts a row into a database table
 #
 PUBLIC FUNCTION create(p_body createRequestBodyType) RETURNS(INTEGER)
     DEFINE fullpath base.StringBuffer
@@ -228,6 +230,7 @@ END FUNCTION
 # Operation /tableName/length
 #
 # VERB: GET
+# DESCRIPTION: Returns number of rows in database table
 #
 PUBLIC FUNCTION len() RETURNS(INTEGER, INTEGER)
     DEFINE fullpath base.StringBuffer
@@ -293,6 +296,7 @@ END FUNCTION
 # Operation /tableName/{id}
 #
 # VERB: GET
+# DESCRIPTION: Returns a row of a database table
 #
 PUBLIC FUNCTION read(p_id INTEGER) RETURNS(INTEGER, readResponseBodyType)
     DEFINE fullpath base.StringBuffer
@@ -415,6 +419,7 @@ PUBLIC FUNCTION read(p_id INTEGER) RETURNS(INTEGER, readResponseBodyType)
 END FUNCTION
 #
 # VERB: PUT
+# DESCRIPTION: Updates a row in a database table
 #
 PUBLIC FUNCTION update(
     p_id INTEGER, p_body updateRequestBodyType)
@@ -423,6 +428,10 @@ PUBLIC FUNCTION update(
     DEFINE contentType STRING
     DEFINE req com.HTTPRequest
     DEFINE resp com.HTTPResponse
+    DEFINE xml_userError_400 STRING
+    DEFINE xml_userError_404 STRING
+    DEFINE xml_body xml.DomDocument
+    DEFINE xml_node xml.DomNode
     DEFINE json_body STRING
 
     TRY
@@ -452,6 +461,8 @@ PUBLIC FUNCTION update(
 
         # Perform request
         CALL req.setMethod("PUT")
+        CALL req.setHeader(
+            "Accept", "application/json, application/xml, text/xml")
         # Perform JSON request
         CALL req.setHeader("Content-Type", "application/json")
         LET json_body = util.JSON.stringify(p_body)
@@ -466,6 +477,52 @@ PUBLIC FUNCTION update(
             WHEN 204 #No Content
                 RETURN C_SUCCESS
 
+            WHEN 400 #Default User error 400
+                IF contentType MATCHES "*application/json*" THEN
+                    # Parse JSON response
+                    LET json_body = resp.getTextResponse()
+                    CALL util.JSON.parse(json_body, userError_400)
+                    RETURN C_USERERROR_400
+                END IF
+                IF contentType MATCHES "*application/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_400)
+                    RETURN C_USERERROR_400
+                END IF
+                IF contentType MATCHES "*text/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_400)
+                    RETURN C_USERERROR_400
+                END IF
+                RETURN -1
+
+            WHEN 404 #Default User error 404
+                IF contentType MATCHES "*application/json*" THEN
+                    # Parse JSON response
+                    LET json_body = resp.getTextResponse()
+                    CALL util.JSON.parse(json_body, userError_404)
+                    RETURN C_USERERROR_404
+                END IF
+                IF contentType MATCHES "*application/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_404)
+                    RETURN C_USERERROR_404
+                END IF
+                IF contentType MATCHES "*text/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_404)
+                    RETURN C_USERERROR_404
+                END IF
+                RETURN -1
+
             OTHERWISE
                 RETURN resp.getStatusCode()
         END CASE
@@ -475,12 +532,18 @@ PUBLIC FUNCTION update(
 END FUNCTION
 #
 # VERB: DELETE
+# DESCRIPTION: Deletes a row in a database table
 #
 PUBLIC FUNCTION delete(p_id INTEGER) RETURNS(INTEGER)
     DEFINE fullpath base.StringBuffer
     DEFINE contentType STRING
     DEFINE req com.HTTPRequest
     DEFINE resp com.HTTPResponse
+    DEFINE xml_userError_400 STRING
+    DEFINE xml_userError_404 STRING
+    DEFINE xml_body xml.DomDocument
+    DEFINE xml_node xml.DomNode
+    DEFINE json_body STRING
 
     TRY
 
@@ -509,6 +572,8 @@ PUBLIC FUNCTION delete(p_id INTEGER) RETURNS(INTEGER)
 
         # Perform request
         CALL req.setMethod("DELETE")
+        CALL req.setHeader(
+            "Accept", "application/json, application/xml, text/xml")
         CALL req.DoRequest()
 
         # Retrieve response
@@ -519,6 +584,52 @@ PUBLIC FUNCTION delete(p_id INTEGER) RETURNS(INTEGER)
 
             WHEN 204 #No Content
                 RETURN C_SUCCESS
+
+            WHEN 400 #Default User error 400
+                IF contentType MATCHES "*application/json*" THEN
+                    # Parse JSON response
+                    LET json_body = resp.getTextResponse()
+                    CALL util.JSON.parse(json_body, userError_400)
+                    RETURN C_USERERROR_400
+                END IF
+                IF contentType MATCHES "*application/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_400)
+                    RETURN C_USERERROR_400
+                END IF
+                IF contentType MATCHES "*text/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_400)
+                    RETURN C_USERERROR_400
+                END IF
+                RETURN -1
+
+            WHEN 404 #Default User error 404
+                IF contentType MATCHES "*application/json*" THEN
+                    # Parse JSON response
+                    LET json_body = resp.getTextResponse()
+                    CALL util.JSON.parse(json_body, userError_404)
+                    RETURN C_USERERROR_404
+                END IF
+                IF contentType MATCHES "*application/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_404)
+                    RETURN C_USERERROR_404
+                END IF
+                IF contentType MATCHES "*text/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_404)
+                    RETURN C_USERERROR_404
+                END IF
+                RETURN -1
 
             OTHERWISE
                 RETURN resp.getStatusCode()

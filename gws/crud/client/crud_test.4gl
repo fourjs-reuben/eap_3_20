@@ -64,8 +64,6 @@ DEFINE list RECORD ATTRIBUTE(XMLName = 'data')
 
         ON ACTION update
             PROMPT "Enter index" FOR idx
-            
-            CALL crud.read(idx) RETURNING wsstatus, rec.*
             PROMPT "Enter string" FOR rec.str
 
             CALL crud.update(idx, rec.*) RETURNING wsstatus
