@@ -10,7 +10,11 @@ TYPE tableNameListType RECORD
     rows DYNAMIC ARRAY OF tableNameType
 END RECORD
 
-PUBLIC DEFINE userError RECORD ATTRIBUTE(WSError="User error")
+PUBLIC DEFINE userError_400 RECORD ATTRIBUTE(WSError="Default User error 400")
+  message STRING
+END RECORD
+
+PUBLIC DEFINE userError_404 RECORD ATTRIBUTE(WSError="Default User error 404")
   message STRING
 END RECORD
 
@@ -51,15 +55,22 @@ END FUNCTION
 
 
 FUNCTION read(id  INTEGER ATTRIBUTES(WSParam))
-    ATTRIBUTES(WSGet, WSPath="/tableName/{id}", WSThrows="404:@userError")
+    ATTRIBUTES(WSGet, WSPath="/tableName/{id}", WSThrows="400:@userError_400, 404:@userError_404")
     RETURNS tableNameType ATTRIBUTES(WSName="rec", WSMedia="application/json,application/xml")
 
 DEFINE d tableNameType
 
+    IF id IS NULL OR id < 1 THEN
+        LET userError_400.message = "Bad Id, must be integer greater than 0"
+        CALL com.WebServiceEngine.SetRestError(400,userError_400)
+        RETURN d.*
+    END IF
+
     SELECT * INTO d.* FROM tableName WHERE @id = id
     IF SQLCA.sqlcode == NOTFOUND THEN
-        LET userError.message = SFMT("Could not find tableName with id :%1",id)
-        CALL com.WebServiceEngine.SetRestError(404,userError)
+        LET userError_404.message = SFMT("Could not find tableName with id :%1",id)
+        CALL com.WebServiceEngine.SetRestError(404,userError_404)
+        RETURN d.*
     END IF
     RETURN d.*
 END FUNCTION

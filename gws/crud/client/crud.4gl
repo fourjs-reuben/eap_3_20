@@ -27,10 +27,16 @@ PUBLIC DEFINE Endpoint
 
 # Error codes
 PUBLIC CONSTANT C_SUCCESS = 0
-PUBLIC CONSTANT C_USERERROR = 1001
+PUBLIC CONSTANT C_USERERROR_400 = 1001
+PUBLIC CONSTANT C_USERERROR_404 = 1002
 
-# generated userErrorErrorType
-PUBLIC TYPE userErrorErrorType RECORD
+# generated userError_400ErrorType
+PUBLIC TYPE userError_400ErrorType RECORD
+    message STRING
+END RECORD
+
+# generated userError_404ErrorType
+PUBLIC TYPE userError_404ErrorType RECORD
     message STRING
 END RECORD
 
@@ -68,9 +74,11 @@ PUBLIC TYPE updateRequestBodyType RECORD
     num INTEGER
 END RECORD
 
-PUBLIC # User error
-    DEFINE userError
-    userErrorErrorType
+PUBLIC # Default User error 400
+    DEFINE userError_400
+    userError_400ErrorType
+PUBLIC # Default User error 404
+DEFINE userError_404 userError_404ErrorType
 
 ################################################################################
 # Operation /tableName
@@ -291,7 +299,8 @@ PUBLIC FUNCTION read(p_id INTEGER) RETURNS(INTEGER, readResponseBodyType)
     DEFINE contentType STRING
     DEFINE req com.HTTPRequest
     DEFINE resp com.HTTPResponse
-    DEFINE xml_userError STRING
+    DEFINE xml_userError_400 STRING
+    DEFINE xml_userError_404 STRING
     DEFINE resp_body readResponseBodyType
     DEFINE xml_body xml.DomDocument
     DEFINE xml_node xml.DomNode
@@ -351,26 +360,49 @@ PUBLIC FUNCTION read(p_id INTEGER) RETURNS(INTEGER, readResponseBodyType)
                 END IF
                 RETURN -1, resp_body.*
 
-            WHEN 404 #User error
+            WHEN 400 #Default User error 400
                 IF contentType MATCHES "*application/json*" THEN
                     # Parse JSON response
                     LET json_body = resp.getTextResponse()
-                    CALL util.JSON.parse(json_body, userError)
-                    RETURN C_USERERROR, resp_body.*
+                    CALL util.JSON.parse(json_body, userError_400)
+                    RETURN C_USERERROR_400, resp_body.*
                 END IF
                 IF contentType MATCHES "*application/xml*" THEN
                     # Parse XML response
                     LET xml_body = resp.getXmlResponse()
                     LET xml_node = xml_body.getDocumentElement()
-                    CALL xml.serializer.DomToVariable(xml_node, userError)
-                    RETURN C_USERERROR, resp_body.*
+                    CALL xml.serializer.DomToVariable(xml_node, userError_400)
+                    RETURN C_USERERROR_400, resp_body.*
                 END IF
                 IF contentType MATCHES "*text/xml*" THEN
                     # Parse XML response
                     LET xml_body = resp.getXmlResponse()
                     LET xml_node = xml_body.getDocumentElement()
-                    CALL xml.serializer.DomToVariable(xml_node, userError)
-                    RETURN C_USERERROR, resp_body.*
+                    CALL xml.serializer.DomToVariable(xml_node, userError_400)
+                    RETURN C_USERERROR_400, resp_body.*
+                END IF
+                RETURN -1, resp_body.*
+
+            WHEN 404 #Default User error 404
+                IF contentType MATCHES "*application/json*" THEN
+                    # Parse JSON response
+                    LET json_body = resp.getTextResponse()
+                    CALL util.JSON.parse(json_body, userError_404)
+                    RETURN C_USERERROR_404, resp_body.*
+                END IF
+                IF contentType MATCHES "*application/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_404)
+                    RETURN C_USERERROR_404, resp_body.*
+                END IF
+                IF contentType MATCHES "*text/xml*" THEN
+                    # Parse XML response
+                    LET xml_body = resp.getXmlResponse()
+                    LET xml_node = xml_body.getDocumentElement()
+                    CALL xml.serializer.DomToVariable(xml_node, userError_404)
+                    RETURN C_USERERROR_404, resp_body.*
                 END IF
                 RETURN -1, resp_body.*
 

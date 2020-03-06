@@ -43,8 +43,10 @@ DEFINE list RECORD ATTRIBUTE(XMLName = 'data')
             CASE
                 WHEN wsstatus = crud.C_SUCCESS
                     DISPLAY "Found=", rec.*
-                WHEN wsstatus = crud.C_USERERROR 
-                    DISPLAY "ERROR=",crud.userError.message
+                WHEN wsstatus = crud.C_USERERROR_400
+                    DISPLAY "ERROR=",crud.userError_400.message
+                WHEN wsstatus = crud.C_USERERROR_404
+                    DISPLAY "ERROR=",crud.userError_404.message
                 OTHERWISE
                     DISPLAY "Some other errors"
             END CASE
